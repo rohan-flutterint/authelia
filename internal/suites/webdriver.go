@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/go-rod/rod"
+	"github.com/go-rod/rod/lib/input"
 	"github.com/go-rod/rod/lib/launcher"
 	"github.com/stretchr/testify/require"
 )
@@ -121,4 +122,14 @@ func (rs *RodSession) waitBodyContains(t *testing.T, page *rod.Page, pattern str
 	}
 
 	require.NoError(t, err)
+}
+
+func (rs *RodSession) toInputs(in string) (out []input.Key) {
+	out = make([]input.Key, len(in))
+
+	for i, c := range in {
+		out[i] = input.Key(c)
+	}
+
+	return out
 }

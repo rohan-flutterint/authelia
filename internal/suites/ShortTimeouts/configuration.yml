@@ -22,7 +22,7 @@ session:
     - name: 'authelia_sessin'
       domain: 'example.com'
       authelia_url: 'https://login.example.com:8080'
-      default_redirection_url: https://home.example.com:8080/
+      default_redirection_url: 'https://home.example.com:8080/'
       inactivity: 5
       expiration: 8
       remember_me: 1y
