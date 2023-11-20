@@ -92,16 +92,16 @@ const SettingsLayout = function (props: Props) {
                 <Toolbar>
                     <IconButton
                         id={"settings-menu"}
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
+                        edge={"start"}
+                        color={"inherit"}
+                        aria-label={"open drawer"}
                         onClick={handleToggleDrawer}
                         sx={{ mr: 2 }}
                     >
                         <Menu />
                     </IconButton>
                     <Typography
-                        variant="h6"
+                        variant={"h6"}
                         component={"div"}
                         sx={{ flexGrow: 1, display: { xs: drawerOpen ? "none" : "block" } }}
                     >
@@ -166,8 +166,8 @@ const DrawerNavItem = function (props: NavItem) {
     }, [navigate, props, selected]);
 
     return (
-        <ListItem disablePadding onClick={handleOnClick} id={`settings-menu-${props.keyname}`}>
-            <ListItemButton selected={selected}>
+        <ListItem disablePadding onClick={handleOnClick}>
+            <ListItemButton selected={selected} id={`settings-menu-${props.keyname}`}>
                 {props.icon ? <ListItemIcon>{props.icon}</ListItemIcon> : null}
                 <ListItemText primary={props.text} />
             </ListItemButton>
